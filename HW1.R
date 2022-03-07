@@ -1,3 +1,7 @@
+ 
+
+## Assignment 1 : run codes from following page.  
+# https://avehtari.github.io/BDA_R_demos/demos_ch2/demo2_1.html
 
 
 # Install ggplot2 if not installed.
