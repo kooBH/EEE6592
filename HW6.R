@@ -42,6 +42,7 @@ prior <- function(a,b){
 }
 
 
+
 # (3) posterior p(pi|y)
 posterior <-function(data){ 
   n <- length(data)
@@ -140,5 +141,4 @@ lines(seq,post,col="green")
 legend("topright",legend=c("B(2,10)","B(10,10)","uniform"),fill=c("green","red","blue"),border="white",box.lty=0,cex=1.5)
 
 # With non-informative prior, posterior is costructed only by likelihood and for this data, posterior is similar to beta(2,10) prior
-# But if beta parameter is wrongly set, center of posterior relatively different from previous posterior distribution.  
-
+# But if beta parameter is set differently, center of posterior distribution is relatively more different that non-informative prior.
