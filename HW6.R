@@ -31,18 +31,26 @@ likelihood <- function(pi,data){
   n <- length(data)
   x <- sum(data)
   likelihood <- dbinom(x, size = n, prob = pi)
-  return (likelihood)
+  return(likelihood)
 }
 
 # (2) prior p(pi)
-#prior <- pbeta(x,a,b)
+prior <- function(a,b){
+  seq <- linspace(0, 1, 1000)
+  prior <- dbeta(seq,a,b)
+  return(prior)
+}
 
 
 # (3) posterior p(pi|y)
-#n <- length(data)
-#y <- sum(data)
-#posterior = dBeta(x,a + y, b + n - y)
-
+posterior <-function(data){ 
+  n <- length(data)
+  y <- sum(data)
+  seq <- linspace(0, 1, 1000)
+  # Hw 3.2
+  posterior = dBeta(seq,a + y, b + n - y)
+  return(posterior)
+}
 
 ## b)
 # What can you say about the value of the unknown π according to the observations and your
@@ -53,7 +61,7 @@ likelihood <- function(pi,data){
 beta_point_est <- function(alpha,beta,data){
   y <- sum(data)
   n <- length(data)
-  # Hw 3.3
+  # HW3,3
   return ((alpha + y) / (alpha + beta + n))
 }
 
