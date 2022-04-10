@@ -117,7 +117,7 @@ seq <- linspace(0, 1, 1000)
 
 # 1) uniform distribution
 post_uniform <- dbeta(seq,1+y,1+n-y)
-plot(seq,post1, type="l",col="blue")
+plot(seq,post1, type="l",col="blue", xlab="pi", ylab="posterior")
 
 # 2_) different beta
 a2 = 10
@@ -133,3 +133,4 @@ legend("topright",legend=c("B(2,10)","B(10,10)","uniform"),fill=c("green","red",
 
 # With non-informative prior, posterior is costructed only by likelihood and for this data, posterior is similar to beta(2,10) prior
 # But if beta parameter is wrongly set, center of posterior relatively different from previous posterior distribution.  
+
